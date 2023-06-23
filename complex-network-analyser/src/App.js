@@ -1,71 +1,63 @@
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import './App.css';
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
-import ReceiptRoundedIcon from "@mui/icons-material/ReceiptRounded";
-import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
-import TimelineRoundedIcon from "@mui/icons-material/TimelineRounded";
-import BubbleChartRoundedIcon from "@mui/icons-material/BubbleChartRounded";
-import WalletRoundedIcon from "@mui/icons-material/WalletRounded";
-import AccountBalanceRoundedIcon from "@mui/icons-material/AccountBalanceRounded";
-import SavingsRoundedIcon from "@mui/icons-material/SavingsRounded";
-import MonetizationOnRoundedIcon from "@mui/icons-material/MonetizationOnRounded";
-import SettingsApplicationsRoundedIcon from "@mui/icons-material/SettingsApplicationsRounded";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
-import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
+import { AiOutlineTable, AiOutlineAreaChart, AiOutlineBranches, AiOutlineRetweet } from "react-icons/ai";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import { Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Home from "./components/Home";
+import GeneralAnalysis from "./components/GeneralAnalysis";
 import Transactions from "./components/Transactions";
 
 function App() {
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-    <Sidebar className="app">
+    <Sidebar className="app" style={{ position: 'sticky', top: 0}}>
       <Menu>
         <MenuItem
-          component={<Link to="/" className="link" />}
           className="menu1"
         >
-          <h3>Project Parts</h3>
+          <h3>CDN Project</h3>
         </MenuItem>
         <MenuItem
-          component={<Link to="dashboard" className="link" />}
+          style={{ fontSize: 18}}
+          component={<Link to="/" className="link" />}
           icon={<GridViewRoundedIcon />}
         >
-          Dashboard
+          General Information
         </MenuItem>
-        <MenuItem icon={<ReceiptRoundedIcon />}> Invoices </MenuItem>
-        <SubMenu label="Charts" icon={<BarChartRoundedIcon />}>
-          <MenuItem icon={<TimelineRoundedIcon />}> Timeline Chart </MenuItem>
-          <MenuItem icon={<BubbleChartRoundedIcon />}>Bubble Chart</MenuItem>
-        </SubMenu>
-        <SubMenu label="Wallets" icon={<WalletRoundedIcon />}>
-          <MenuItem icon={<AccountBalanceRoundedIcon />}>
-            Current Wallet
-          </MenuItem>
-          <MenuItem icon={<SavingsRoundedIcon />}>Savings Wallet</MenuItem>
-        </SubMenu>
         <MenuItem
+          style={{ fontSize: 18}}
           component={<Link to="transactions" className="link" />}
-          icon={<MonetizationOnRoundedIcon />}
+          icon={<AiOutlineTable />}
         >
-          Transactions
+          Important Nodes
         </MenuItem>
-        <SubMenu label="Settings" icon={<SettingsApplicationsRoundedIcon />}>
-          <MenuItem icon={<AccountCircleRoundedIcon />}> Account </MenuItem>
-          <MenuItem icon={<ShieldRoundedIcon />}> Privacy </MenuItem>
-          <MenuItem icon={<NotificationsRoundedIcon />}>
-            Notifications
-          </MenuItem>
-        </SubMenu>
-        <MenuItem icon={<LogoutRoundedIcon />}> Logout </MenuItem>
+        <MenuItem
+          style={{ fontSize: 18}}
+          component={<Link to="/" className="link" />}
+          icon={<AiOutlineAreaChart />}
+        >
+          Charts
+        </MenuItem>
+        <MenuItem 
+          style={{ fontSize: 18}}
+          component={<Link to="/" className="link" />} 
+          icon={<AiOutlineBranches />}
+        >
+          Label Classification
+        </MenuItem>
+        <MenuItem 
+          style={{ fontSize: 18}}
+          component={<Link to="/" className="link" />}
+          icon={<AiOutlineRetweet />}
+        >
+          Epidemic Models
+        </MenuItem>
       </Menu>
     </Sidebar>
-    <section>
+    <section style={{ flex: 1 }}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<GeneralAnalysis />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="transactions" element={<Transactions />} />
       </Routes>
