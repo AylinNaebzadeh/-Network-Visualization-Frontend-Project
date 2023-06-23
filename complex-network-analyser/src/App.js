@@ -28,7 +28,7 @@ function App() {
           component={<Link to="/" className="link" />}
           className="menu1"
         >
-          <h2>QUICKPAY</h2>
+          <h3>Project Parts</h3>
         </MenuItem>
         <MenuItem
           component={<Link to="dashboard" className="link" />}
