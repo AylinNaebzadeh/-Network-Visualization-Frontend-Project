@@ -40,6 +40,7 @@ const GeneralAnalysis = () => {
         
     }, []);
 
+    
     if (!generalInfo) {
         return (
             <div>
@@ -73,6 +74,10 @@ const GeneralAnalysis = () => {
     if (generalInfo) {
         console.log("THE GENERAL INFO IS ", generalInfo);
     }
+    if (data) {
+        console.log("THE GRAPH DATA IS ", data);
+    }
+
     return (
         <div>
             <Container style={{ paddingTop: "3rem", paddingBottom: "2rem", marginLeft: "17rem" }}>
@@ -163,7 +168,7 @@ const GeneralAnalysis = () => {
                                     <Item>
                                         <Box sx={{ display: 'flex', alignItems: 'center', mt: "0.5rem" }}>
                                             <FcBullish style={{ fontSize: 75, marginRight: 10, marginLeft: 10 }} />
-                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Assortiativity: <span style={{ color: "#165a72", fontWeight: 'normal' }}>{generalInfo.assortiativity}</span></Typography>
+                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Assortiativity Between The Nodes: <span style={{ color: "#165a72", fontWeight: 'normal', marginLeft: "22rem" }}>{generalInfo.assortiativity}</span></Typography>
                                         </Box>
                                     </Item>
                                 </Stack>
@@ -177,7 +182,7 @@ const GeneralAnalysis = () => {
                                     <Item>
                                         <Box sx={{ display: 'flex', alignItems: 'center', mt: "0.5rem" }}>
                                             <FcWorkflow style={{ fontSize: 75, marginRight: 10, marginLeft: 10 }} />
-                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Average In-degree & out-degree: <span style={{ color: "#165a72", fontWeight: 'normal' }}>{generalInfo.avg_in_degree}, {generalInfo.avg_out_degree}</span></Typography>
+                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Average In-degree & out-degree: <span style={{ color: "#165a72", fontWeight: 'normal', marginLeft: "18rem" }}>{generalInfo.avg_in_degree}, {generalInfo.avg_out_degree}</span></Typography>
                                         </Box>
                                     </Item>
                                 </Stack>
@@ -192,7 +197,7 @@ const GeneralAnalysis = () => {
                                     <Item>
                                         <Box sx={{ display: 'flex', alignItems: 'center', mt: "0.5rem" }}>
                                             <FcLineChart style={{ fontSize: 75, marginRight: 10, marginLeft: 10 }} />
-                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Average Shortest Path Length: <span style={{ color: "#165a72", fontWeight: 'normal' }}>{generalInfo.avg_shortest_path_length}</span></Typography>
+                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Average Shortest Path Length: <span style={{ color: "#165a72", fontWeight: 'normal', marginLeft: "26rem" }}>{generalInfo.avg_shortest_path_length}</span></Typography>
                                         </Box>
                                     </Item>
                                 </Stack>
@@ -206,7 +211,7 @@ const GeneralAnalysis = () => {
                                     <Item>
                                         <Box sx={{ display: 'flex', alignItems: 'center', mt: "0.5rem" }}>
                                             <FcHeatMap style={{ fontSize: 75, marginRight: 10, marginLeft: 10 }} />
-                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Average Clustering Coefficient: <span style={{ color: "#165a72", fontWeight: 'normal' }}>{generalInfo.avg_cc}</span></Typography>
+                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Average Clustering Coefficient: <span style={{ color: "#165a72", fontWeight: 'normal', marginLeft: "25rem" }}>{generalInfo.avg_cc}</span></Typography>
                                         </Box>
                                     </Item>
                                 </Stack>
@@ -222,7 +227,7 @@ const GeneralAnalysis = () => {
                                     <Item>
                                         <Box sx={{ display: 'flex', alignItems: 'center', mt: "0.5rem" }}>
                                             <FcAreaChart style={{ fontSize: 75, marginRight: 10, marginLeft: 10 }} />
-                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Degree Centralization: <span style={{ color: "#165a72", fontWeight: 'normal' }}>{generalInfo.degree_centralization}</span></Typography>
+                                            <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>Degree Centralization: <span style={{ color: "#165a72", fontWeight: 'normal' , marginLeft: "33rem"}}>{generalInfo.degree_centralization}</span></Typography>
                                         </Box>
                                     </Item>
                                 </Stack>
@@ -231,12 +236,16 @@ const GeneralAnalysis = () => {
                     </Grid>
 
                     <Grid item xs={12} sm={12} md={12} sx={{marginBottom:'3vh'}} >
-                        <Card sx={{ bgcolor: '#DAEDEB', height: 'max-content' }}>
+                        <Item>
+                            <h1>My Graph</h1>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} sx={{marginBottom:'3vh'}} >
+                        <Card sx={{ bgcolor: 'white', height: 'max-content' }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                 <Stack>
                                     <Item>
                                         <Box sx={{ display: 'flex', alignItems: 'center', mt: "0.5rem" }}>
-                                            <h1>My Graph</h1>
                                             <Graph data={data} />
                                         </Box>
                                     </Item>
