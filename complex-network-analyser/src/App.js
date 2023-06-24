@@ -2,11 +2,10 @@ import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from "react-pro-sideb
 import './App.css';
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import { AiOutlineTable, AiOutlineAreaChart, AiOutlineBranches, AiOutlineRetweet } from "react-icons/ai";
-import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import { Routes, Route, Link } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
+import Charts from "./components/Charts";
 import GeneralAnalysis from "./components/GeneralAnalysis";
-import Transactions from "./components/Transactions";
+import TopNodes from "./components/TopNodes";
 
 function App() {
   const { collapseSidebar, collapsed } = useProSidebar();
@@ -32,7 +31,7 @@ function App() {
         </MenuItem>
         <MenuItem
           style={{ fontSize: 18}}
-          component={<Link to="transactions" className="link" />}
+          component={<Link to="topnodes" className="link" />}
           icon={<AiOutlineTable />}
         >
           Important Nodes
@@ -63,8 +62,8 @@ function App() {
     <section style={{ flex: 1 }}>
       <Routes>
         <Route path="/" element={<GeneralAnalysis />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="transactions" element={<Transactions />} />
+        <Route path="topnodes" element={<TopNodes />} />
+        <Route path="charts" element={<Charts />} />
       </Routes>
     </section>
   </div>

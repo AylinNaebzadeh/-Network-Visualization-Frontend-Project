@@ -1,7 +1,6 @@
 import React from 'react';
-import './main.css';
 
-const Dashboard = () => {
+const Charts = () => {
     return (
         <div>
         <h1 className="header"> General Analysis</h1>
@@ -11,4 +10,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default Charts

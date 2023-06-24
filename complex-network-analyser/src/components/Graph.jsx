@@ -1,6 +1,5 @@
 import React from 'react';
 import G6 from '@antv/g6';
-import './Graph.css';
 import ReactDOM from 'react-dom';
 
 const Graph = ({ data }) => {
