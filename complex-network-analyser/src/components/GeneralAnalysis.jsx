@@ -37,6 +37,7 @@ const GeneralAnalysis = () => {
         fetch('http://127.0.0.1:8000/api/v1/convert_graph/')
         .then((res) => res.json())
         .then((data) => setData(data));
+        
     }, []);
 
     if (!generalInfo) {
