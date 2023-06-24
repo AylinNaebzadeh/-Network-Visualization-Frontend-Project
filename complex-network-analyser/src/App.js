@@ -1,4 +1,4 @@
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from "react-pro-sidebar";
 import './App.css';
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import { AiOutlineTable, AiOutlineAreaChart, AiOutlineBranches, AiOutlineRetweet } from "react-icons/ai";
@@ -9,9 +9,14 @@ import GeneralAnalysis from "./components/GeneralAnalysis";
 import Transactions from "./components/Transactions";
 
 function App() {
+  const { collapseSidebar, collapsed } = useProSidebar();
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-    <Sidebar className="app" style={{ position: 'sticky', top: 0}}>
+    <Sidebar className="app" style={{
+          position: 'fixed',
+          width: collapsed ? 80 : 250,
+          height: '100%',
+        }}>
       <Menu>
         <MenuItem
           className="menu1"
