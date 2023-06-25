@@ -50,12 +50,12 @@ const TopNodes = () => {
                                 <Column title="Value" dataIndex="value3" key="value3" />
                             </ColumnGroup>
 
-                            <ColumnGroup title="1st">
+                            <ColumnGroup title="4th">
                                 <Column title="ID" dataIndex="id4" key="id4" />
                                 <Column title="value" dataIndex="value4" key="value4" />
                             </ColumnGroup>
 
-                            <ColumnGroup title="1st">
+                            <ColumnGroup title="5th">
                                 <Column title="ID" dataIndex="id5" key="id5" />
                                 <Column title="value" dataIndex="value5" key="value5" />
                             </ColumnGroup>

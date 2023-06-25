@@ -38,7 +38,7 @@ function App() {
         </MenuItem>
         <MenuItem
           style={{ fontSize: 18}}
-          component={<Link to="/" className="link" />}
+          component={<Link to="charts" className="link" />}
           icon={<AiOutlineAreaChart />}
         >
           Charts
